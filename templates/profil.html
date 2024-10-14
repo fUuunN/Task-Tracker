@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="/app/static/style.css">
+</head>
+
+<body>
+    <!-- Navigasyon çubuğu -->
+    <div id="navbar">
+        <div id="logo">Tracker</div>
+        <div id="username-container">
+            <!-- Kullanıcı adı görüntüleme alanı -->
+            <div id="username">username</div>
+        </div>
+    </div>
+
+    <!-- Ana İçerik -->
+    <main>
+        <!-- Kanbanları listeleme bölümü -->
+        <section>
+            <h2>Your Kanbans</h2>
+            <!-- Kanban listesi için yer tutucu -->
+            <ul id="kanban-list"></ul>
+        </section>
+
+        <!-- Yeni Kanban oluşturma formu -->
+        <section>
+            <h2>Create New Kanban</h2>
+            <form id="create-kanban-form">
+                <label for="kanbanName">Kanban Name:</label>
+                <!-- Kanban adı giriş alanı -->
+                <input type="text" id="kanbanName" name="kanbanName" required>
+                <!-- Yeni Kanban oluşturma butonu -->
+                <button type="submit">Create Kanban</button>
+            </form>
+        </section>
+
+        <!-- Kanban silme formu -->
+        <section>
+            <h2>Delete Kanban</h2>
+            <form id="delete-kanban-form">
+                <label for="kanbanId">Kanban ID:</label>
+                <!-- Silinecek Kanban'ın ID'sini girme alanı -->
+                <input type="text" id="kanbanId" name="kanbanId" required>
+                <!-- Kanban silme butonu -->
+                <button type="submit" class="delete-button">Delete Kanban</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Sohbet açma butonu -->
+    <div id="chat-toggle" class="chat-icon">💬</div>
+
+    <!-- Sohbet penceresi -->
+    <div id="chat-container" class="chat-container">
+        <!-- Sohbet penceresini kapatma butonu -->
+        <button id="chat-close" class="chat-close">✖</button>
+        <!-- Sohbet mesajları bölümü -->
+        <div id="chat-box" class="chat-box"></div>
+        <!-- Sohbet formu -->
+        <form id="chat-form">
+            <input type="text" id="user-input" placeholder="Type your message here..." required>
+            <!-- Mesaj gönderme butonu -->
+            <button type="submit">Send</button>
+        </form>
+    </div>
+
+    <!-- JavaScript dosyaları -->
+    <script src="/app/static/profil.js"></script>
+    <script src="/app/static/chatbot.js"></script>
+</body>
+
+</html>

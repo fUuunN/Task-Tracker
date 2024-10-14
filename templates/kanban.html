@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban Board</title>
+    <link rel="stylesheet" href="/app/static/style.css">
+</head>
+
+<body>
+    <!-- Navigasyon çubuğu -->
+    <div id="navbar">
+        <div id="logo">Tracker</div>
+        <div id="kanban-title">Kanban Board</div>
+        <div id="username-container">
+            <div id="username">Username</div>
+            <!-- Kullanıcı menüsü (açılır menü) -->
+            <div id="user-menu" class="dropdown-content">
+                <a href="#" id="profile-link">Profile</a>
+                <a href="#" id="settings-link">Settings</a>
+                <a href="/app/templates/login.html">Logout</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Yeni görev oluşturma butonu -->
+    <button id="create-task-btn">Create New Task</button>
+
+    <!-- Görev oluşturma modal'ı -->
+    <div id="create-task-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-modal" class="close">&times;</span>
+            <h2>Create New Task</h2>
+            <form id="create-task-form">
+                <label for="task-title">Title:</label>
+                <input type="text" id="task-title" name="task-title" required><br>
+                <label for="task-status">Status:</label>
+                <select id="task-status" name="task-status">
+                    <option value="1">Todo</option>
+                    <option value="2">Devam Ediyor</option>
+                    <option value="3">Bitti</option>
+                </select><br>
+                <label for="task-description">Description:</label>
+                <input type="text" id="task-description" name="task-description"><br>
+                <label for="task-assigned-user">Assigned User:</label>
+                <input type="text" id="task-assigned-user" name="task-assigned-user"><br>
+                <button type="submit">Create Task</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Görev güncelleme modal'ı -->
+    <div id="update-task-modal" class="modal">
+        <div class="modal-content">
+            <span id="close-update-modal" class="close">&times;</span>
+            <h2>Update Task</h2>
+            <form id="update-task-form">
+                <input type="hidden" id="update-task-id">
+                <label for="update-task-title">Title:</label>
+                <input type="text" id="update-task-title" name="taskTitle" required><br>
+                <label for="update-task-status">Status:</label>
+                <select id="update-task-status" name="taskStatus">
+                    <option value="1">Todo</option>
+                    <option value="2">Devam Ediyor</option>
+                    <option value="3">Bitti</option>
+                </select><br>
+                <label for="update-task-description">Description:</label>
+                <input type="text" id="update-task-description" name="taskDescription"><br>
+                <label for="update-task-assigned-user">Assigned User:</label>
+                <input type="text" id="update-task-assigned-user" name="taskAssignedUser"><br>
+                <button type="submit">Update Task</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Görev listesi kolonları -->
+    <div id="task-list-columns">
+        <div id="task-list-container-todo" class="task-list-container">
+            <h2>Todo</h2>
+            <div id="task-list-todo"></div>
+        </div>
+        <div id="task-list-container-devam-ediyor" class="task-list-container">
+            <h2>Devam Ediyor</h2>
+            <div id="task-list-devam-ediyor"></div>
+        </div>
+        <div id="task-list-container-bitmis" class="task-list-container">
+            <h2>Bitti</h2>
+            <div id="task-list-bitmis"></div>
+        </div>
+    </div>
+
+    <!-- Sohbet simgesi ve sohbet kutusu -->
+    <div id="chat-toggle" class="chat-icon">💬</div>
+    <div id="chat-container" class="chat-container">
+        <button id="chat-close" class="chat-close">✖</button>
+        <div id="chat-box" class="chat-box"></div>
+        <form id="chat-form">
+            <input type="text" id="user-input" placeholder="Type your message here..." required>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+
+    <!-- JavaScript dosyalarını ekliyoruz -->
+    <script src="/app/static/chatbot.js"></script>
+    <script src="/app/static/kanban.js"></script>
+    <script src="/app/static/scripts.js"></script>
+</body>
+
+</html>

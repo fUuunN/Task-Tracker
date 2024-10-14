@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Kanbans</title>
+</head>
+
+<body>
+    <h1>User Kanbans</h1> <!-- Sayfanın başlığı -->
+
+    <ul id="kanban-list" class="kanban-list">
+        <!-- Kanbanlar dinamik olarak buraya eklenecek -->
+    </ul>
+
+    <script>
+        // Sayfa yüklendiğinde çalışacak olan JavaScript kodu
+        document.addEventListener('DOMContentLoaded', async () => {
+            // URL'den kullanıcı ID'sini al
+            const userId = new URLSearchParams(window.location.search).get('userId');
+            if (!userId) {
+                alert('User ID is required'); // Kullanıcı ID'si yoksa uyarı mesajı
+                return;
+            }
+
+            try {
+                // Kullanıcı ID'si ile kanbanları almak için API'ye istek gönder
+                const response = await fetch(`http://127.0.0.1:8000/users/${userId}/kanbans`);
+                if (!response.ok) {
+                    throw new Error('Failed to fetch Kanbans'); // İstek başarısızsa hata fırlat
+                }
+                const kanbans = await response.json(); // Yanıtı JSON formatında al
+                const kanbanList = document.getElementById('kanban-list'); // Kanban listesini seç
+
+                // Her kanban için liste öğesi oluştur
+                kanbans.forEach(kanban => {
+                    const li = document.createElement('li'); // Yeni liste öğesi oluştur
+                    li.className = 'kanban-item'; // CSS sınıfını ayarla
+                    li.textContent = kanban.kanbanName; // Kanban adını liste öğesine ekle
+                    li.onclick = () => {
+                        // Liste öğesine tıklandığında yönlendirme yap
+                        window.location.href = `http://127.0.0.1:5500/kanban/${kanban.kanbanId}`;
+                    };
+                    kanbanList.appendChild(li); // Liste öğesini listeye ekle
+                });
+            } catch (error) {
+                // Hata durumunda hata mesajını konsola yazdır
+                console.error('Error loading Kanbans:', error);
+            }
+        });
+    </script>
+</body>
+
+</html>

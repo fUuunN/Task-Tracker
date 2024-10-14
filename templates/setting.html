@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings</title>
+    <link rel="stylesheet" href="/app/static/style.css">
+</head>
+
+<body>
+    <!-- Navigasyon çubuğu -->
+    <div id="navbar">
+        <div id="logo">Tracker</div>
+        <div id="kanban-title">Kanban Board</div>
+        <div id="username-container">
+            <!-- Kullanıcı adı görüntüleme alanı -->
+            <div id="username">Username</div>
+        </div>
+    </div>
+
+    <!-- Ayarlar bölümü -->
+    <div id="settings-container">
+        <form id="settings-form">
+            <h2>Settings</h2>
+            <!-- Kullanıcı adı değiştirme -->
+            <div class="form-group">
+                <label for="user">Change Username</label>
+                <!-- Yeni kullanıcı adı giriş alanı -->
+                <input type="text" id="user" name="username" placeholder="New Username">
+            </div>
+            <!-- Şifre değiştirme -->
+            <div class="form-group">
+                <label for="password">Change Password</label>
+                <!-- Yeni şifre giriş alanı -->
+                <input type="password" id="password" name="password" placeholder="New Password">
+            </div>
+            <!-- E-posta değiştirme -->
+            <div class="form-group">
+                <label for="email">Change Email</label>
+                <!-- Yeni e-posta adresi giriş alanı -->
+                <input type="email" id="email" name="email" placeholder="New Email">
+            </div>
+            <!-- Değişiklikleri kaydetme butonu -->
+            <button type="submit" class="settings-button">Save Changes</button>
+        </form>
+    </div>
+
+    <!-- Ayarlar sayfası için JavaScript dosyası -->
+    <script src="/app/static/settings.js"></script>
+</body>
+
+</html>

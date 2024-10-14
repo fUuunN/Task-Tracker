@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="/app/static/style.css">
+</head>
+
+<body>
+    <!-- Navigasyon çubuğu -->
+    <div id="navbar">
+        <div id="logo">Tracker</div>
+    </div>
+
+    <!-- Giriş formu -->
+    <div id="login-container">
+        <form id="login-form">
+            <h2>Login</h2>
+            <div class="form-group">
+                <label for="email">Username:</label>
+                <!-- Kullanıcı adı giriş alanı -->
+                <input type="text" id="email" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <!-- Şifre giriş alanı -->
+                <input type="password" id="password" name="password" required>
+            </div>
+            <!-- Giriş butonu -->
+            <button type="submit" class="login-button">Login</button>
+            <p>Don't have an account? <a href="/app/templates/signIn.html">Sign up here</a></p>
+        </form>
+    </div>
+
+    <!-- Giriş ile ilgili JavaScript dosyası -->
+    <script src="/app/static/login.js"></script>
+</body>
+
+</html>

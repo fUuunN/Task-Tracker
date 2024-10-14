@@ -1,0 +1,777 @@
+/* Base styling for body */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #f0f0f0;
+    box-sizing: border-box;
+}
+
+/* Navbar styling */
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #007bff;
+    color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for logo (left side) */
+#logo {
+    font-size: 1.2em;
+}
+
+/* Style for Kanban title (center) */
+#kanban-title {
+    flex: 1;
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+/* Style for username container (right side) */
+#username-container {
+    position: relative;
+    display: inline-block;
+}
+
+/* Style for username (right side) */
+#username {
+    cursor: pointer;
+    font-size: 1em;
+}
+
+/* Dropdown content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-bottom: 1px solid #ddd;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Show the dropdown menu on hover */
+.show {
+    display: block;
+}
+
+/* Show dropdown content when username is clicked */
+#username-container.show .dropdown-content {
+    display: block;
+}
+
+/* Container for task list columns */
+#task-list-columns {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+/* Individual task list container styling */
+.task-list-container {
+    flex: 1;
+    min-width: 300px;
+    margin: 10px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Task list styling */
+#task-list-todo div,
+#task-list-devam-ediyor div,
+#task-list-bitmis div {
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #fafafa;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Font and color adjustments */
+#task-list-todo div,
+#task-list-devam-ediyor div,
+#task-list-bitmis div {
+    color: #333;
+}
+
+#task-list-todo h3,
+#task-list-devam-ediyor h3,
+#task-list-bitmis h3 {
+    font-size: 1.2em;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 600px) {
+    #task-list-columns {
+        flex-direction: column;
+    }
+
+    .task-list-container {
+        width: 95%;
+    }
+}
+
+/* Style for task items */
+.task-item {
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #fafafa;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for task info (always visible) */
+.task-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+/* Style for toggle buttons */
+.toggle-button {
+    display: block;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+}
+
+.toggle-button:hover {
+    background-color: #0056b3;
+}
+
+/* Style for task details (hidden by default) */
+.task-details {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f1f1f1;
+}
+
+/* Container for login form */
+#login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    padding: 20px;
+}
+
+#login-form {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 400px;
+    width: 100%;
+}
+
+#login-form h2 {
+    margin: 0 0 20px;
+    font-size: 1.5em;
+    text-align: center;
+    color: #333;
+}
+
+/* Form group styling */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Style for login button */
+.login-button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive design adjustments for login page */
+@media (max-width: 600px) {
+    #login-container {
+        padding: 10px;
+    }
+}
+
+/* Container for sign-in form */
+#sign-in-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    padding: 20px;
+}
+
+/* Sign-in form styling */
+#sign-in-form {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 400px;
+    width: 100%;
+}
+
+#sign-in-form h2 {
+    margin: 0 0 20px;
+    font-size: 1.5em;
+    text-align: center;
+    color: #333;
+}
+
+/* Style for sign-in button */
+.sign-in-button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.sign-in-button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive design adjustments for sign-in page */
+@media (max-width: 600px) {
+    #sign-in-container {
+        padding: 10px;
+    }
+}
+
+/* Settings Container */
+#settings-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    padding: 20px;
+}
+
+#settings-form {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 400px;
+    width: 100%;
+}
+
+/* Style for settings button */
+.settings-button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+.settings-button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive design adjustments for settings page */
+@media (max-width: 600px) {
+    #settings-container {
+        padding: 10px;
+    }
+}
+
+/* Modal styling */
+/* Modal styling */
+.modal {
+    display: none;
+    /* Initially hidden */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    transition: opacity 0.3s ease;
+}
+
+/* Modal content styling */
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+/* Close button styling */
+.close {
+    color: #666;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #333;
+}
+
+/* Modal header styling */
+.modal-content h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+    color: #333;
+}
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Form label styling */
+form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Form input styling */
+form input[type="text"],
+form select {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+/* Form button styling */
+form button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+/* Input and select elements with full width */
+form input[type="text"],
+form select {
+    width: 100%;
+}
+
+/* Button styling */
+/* Button styling */
+/* Button styling */
+#create-task-btn {
+    display: inline-block;
+    /* Butonun genişliğini içeriğine göre ayarlar */
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    font-size: 0.9em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 50px;
+    /* Buton etrafında boşluk bırakır */
+}
+
+#create-task-btn:hover {
+    background-color: #0056b3;
+}
+
+#create-task-btn:focus {
+    outline: none;
+}
+
+#create-task-btn:active {
+    background-color: #004494;
+}
+
+.delete-button {
+    display: block;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff0037;
+    color: #fff;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+}
+
+.delete-button:hover {
+    background-color: #b30027;
+}
+
+.update-button {
+    display: block;
+    float: right;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #0056b3;
+    color: #fff;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+}
+
+.update-button:hover {
+    background-color: #004494;
+}
+
+/* General input styling to avoid hitting the container edges */
+input,
+textarea {
+    width: calc(100% - 20px);
+    /* Subtract padding or margin from width */
+    box-sizing: border-box;
+    /* Include padding and border in element's total width */
+    padding: 10px;
+    /* Add padding inside input */
+    margin-right: 10px;
+    /* Add margin to the right to avoid touching container edge */
+    border: 1px solid #ddd;
+    /* Standard border for input */
+    border-radius: 5px;
+    /* Rounded corners for input */
+}
+
+/* Container specific input styling (if needed) */
+#login-form input,
+#sign-in-form input,
+#settings-form input {
+    width: calc(100% - 20px);
+    /* Ensure width does not exceed container */
+    box-sizing: border-box;
+    /* Include padding and border in element's total width */
+    margin-right: 10px;
+    /* Add margin to the right to avoid touching container edge */
+}
+
+@media (max-width: 600px) {
+
+    input,
+    textarea {
+        width: calc(100% - 20px);
+        /* Adjust width for smaller screens */
+    }
+}
+
+/* Yeni Kanban Oluşturma Formu */
+#create-kanban-form {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+#create-kanban-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+#create-kanban-form input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+#create-kanban-form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+#create-kanban-form button:hover {
+    background-color: #0056b3;
+}
+
+#delete-kanban-form {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+#delete-kanban-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+#delete-kanban-form input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+#delete-kanban-form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff0037;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+#delete-kanban-form button:hover {
+    background-color: #b30027;
+}
+
+
+/* Responsive Tasarım */
+@media (max-width: 600px) {
+    main {
+        padding: 10px;
+    }
+
+    #create-kanban-form {
+        width: 100%;
+    }
+}
+
+/* Kanban Listesi */
+#kanban-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#kanban-list li {
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+#kanban-list a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+#kanban-list a:hover {
+    text-decoration: underline;
+}
+
+/* Chat icon styling */
+.chat-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    background-color: #007bff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.chat-icon img {
+    width: 30px;
+    height: 30px;
+}
+
+/* Chat container styling */
+.chat-container {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 400px;
+    max-width: 100%;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    transform: scale(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+}
+
+/* Show chat container when active */
+.chat-container.show {
+    transform: scale(1);
+}
+
+/* Chat box styling */
+.chat-box {
+    height: 300px;
+    overflow-y: auto;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+/* Chat message styling */
+.chat-message {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* User message styling */
+.chat-message.user {
+    background-color: #f1f1f1;
+    text-align: left;
+}
+
+/* Bot message styling */
+.chat-message.bot {
+    background-color: #e0e0e0;
+    text-align: left;
+}
+
+/* Form styling */
+#chat-form {
+    display: flex;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+}
+
+#user-input {
+    flex: 1;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Close button styling */
+.chat-close {
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #333;
+    cursor: pointer;
+    align-self: flex-end;
+    padding: 5px;
+}
+
+
+/* Kanban listesinin stili */
+.kanban-list {
+    list-style-type: none;
+    /* Liste işaretlerini kaldırır */
+    padding: 0;
+    /* Padding'i sıfırlar */
+}
+
+/* Kanban öğelerinin stili */
+.kanban-item {
+    background: #f4f4f4;
+    /* Arka plan rengi */
+    border: 1px solid #ddd;
+    /* Sınır rengi ve kalınlığı */
+    border-radius: 4px;
+    /* Köşe yuvarlama */
+    margin: 5px 0;
+    /* Dış boşluklar */
+    padding: 10px;
+    /* İç boşluklar */
+    cursor: pointer;
+    /* Fare imlecini işaretçi yapar */
+}
+
+/* Kanban öğesi üzerine gelindiğinde stil değişikliği */
+.kanban-item:hover {
+    background: #ddd;
+    /* Arka plan rengini değiştirir */
+}
